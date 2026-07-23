@@ -1,0 +1,28 @@
+/* ---------- SECTIONS ---------- */
+section {
+  padding: 100px 0;
+}
+.section-head {
+  max-width: 640px;
+  margin-bottom: 56px;
+}
+.section-head h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(30px, 3.6vw, 42px);
+  line-height: 1.08;
+  margin-top: 14px;
+  letter-spacing: -0.01em;
+  color: var(--deep);
+}
+.section-head p {
+  margin-top: 14px;
+  color: var(--slate);
+  font-size: 16.5px;
+  max-width: 520px;
+}
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

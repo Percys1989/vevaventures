@@ -1,0 +1,161 @@
+/* ---------- PRELOADER: building rises floor by floor ---------- */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background:
+    radial-gradient(
+      1100px 620px at 78% -10%,
+      rgba(79, 163, 247, 0.5),
+      transparent 60%
+    ),
+    linear-gradient(160deg, var(--deep) 0%, var(--deep2) 65%, #051436 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+}
+#preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+body.is-loading {
+  overflow: hidden;
+}
+
+.pl-svg {
+  width: 190px;
+  height: 190px;
+}
+.pl-floor {
+  stroke: var(--blue-bright);
+  stroke-width: 2.4;
+  fill: rgba(79, 163, 247, 0.08);
+  stroke-dasharray: 180;
+  stroke-dashoffset: 180;
+  animation: plDraw 0.55s ease forwards;
+}
+.pl-floor.f1 {
+  animation-delay: 0.05s;
+}
+.pl-floor.f2 {
+  animation-delay: 0.35s;
+}
+.pl-floor.f3 {
+  animation-delay: 0.65s;
+}
+.pl-floor.f4 {
+  animation-delay: 0.95s;
+}
+.pl-roof {
+  stroke: var(--mint);
+  stroke-width: 2.6;
+  fill: none;
+  stroke-dasharray: 140;
+  stroke-dashoffset: 140;
+  animation: plDraw 0.5s ease forwards;
+  animation-delay: 1.25s;
+}
+.pl-window {
+  fill: var(--blue-bright);
+  opacity: 0;
+  animation: plWin 0.4s ease forwards;
+}
+.pl-w1 {
+  animation-delay: 0.3s;
+}
+.pl-w2 {
+  animation-delay: 0.3s;
+}
+.pl-w3 {
+  animation-delay: 0.6s;
+}
+.pl-w4 {
+  animation-delay: 0.6s;
+}
+.pl-w5 {
+  animation-delay: 0.9s;
+}
+.pl-w6 {
+  animation-delay: 0.9s;
+}
+.pl-w7 {
+  animation-delay: 1.2s;
+}
+.pl-w8 {
+  animation-delay: 1.2s;
+}
+@keyframes plDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes plWin {
+  to {
+    opacity: 1;
+  }
+}
+
+.pl-label {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pl-label::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--mint);
+  animation: plPulse 1s ease-in-out infinite;
+}
+@keyframes plPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.pl-bar {
+  width: 160px;
+  height: 3px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.14);
+  margin-top: 16px;
+  overflow: hidden;
+}
+.pl-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue-bright), var(--mint));
+  animation: plBar 1.7s ease forwards;
+}
+@keyframes plBar {
+  to {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pl-floor,
+  .pl-roof,
+  .pl-window,
+  .pl-bar-fill {
+    animation-duration: 0.01s !important;
+    animation-delay: 0s !important;
+  }
+}

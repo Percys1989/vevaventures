@@ -1,0 +1,201 @@
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  background:
+    radial-gradient(
+      1100px 620px at 78% -10%,
+      rgba(79, 163, 247, 0.55),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at -10% 100%,
+      rgba(30, 94, 255, 0.45),
+      transparent 55%
+    ),
+    linear-gradient(160deg, var(--deep) 0%, var(--deep2) 65%, #051436 100%);
+  color: #fff;
+  overflow: hidden;
+  padding: 96px 0 140px;
+}
+.hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  gap: 40px;
+  align-items: center;
+}
+@media (max-width: 940px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(40px, 5.6vw, 66px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 20px 0 22px;
+}
+.hero h1 .accent {
+  background: linear-gradient(90deg, var(--blue-bright), var(--mint));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p.lede {
+  font-size: 17.5px;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 460px;
+  margin-bottom: 32px;
+}
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.stat-row {
+  display: flex;
+  gap: 34px;
+  flex-wrap: wrap;
+}
+
+.stat .n {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 26px;
+  color: #fff;
+}
+.stat .l {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+}
+
+/* Signature: ascending trajectory with floating property cards */
+.trajectory {
+  position: relative;
+  height: 460px;
+}
+.trajectory svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.float-card {
+  position: absolute;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 20px 50px rgba(5, 20, 54, 0.35);
+  width: 190px;
+  animation: floaty 5s ease-in-out infinite;
+}
+.float-card .fc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.float-card .fc-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13.5px;
+}
+.float-card .fc-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--mint);
+  background: rgba(55, 226, 160, 0.14);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+.float-card .fc-val {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--deep);
+}
+.float-card .fc-sub {
+  font-size: 11px;
+  color: var(--slate);
+  margin-top: 1px;
+}
+.fc1 {
+  top: 8%;
+  left: 4%;
+  animation-delay: 0s;
+}
+.fc2 {
+  top: 40%;
+  right: 2%;
+  width: 170px;
+  animation-delay: 1.1s;
+}
+.fc3 {
+  bottom: 6%;
+  left: 16%;
+  animation-delay: 2.2s;
+}
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+@media (max-width: 940px) {
+  .trajectory {
+    height: 380px;
+  }
+  .float-card {
+    width: 150px;
+    padding: 11px 13px;
+  }
+  .fc-val {
+    font-size: 16px !important;
+  }
+}
+@media (max-width: 560px) {
+  .fc2 {
+    right: -4%;
+  }
+  .fc3 {
+    left: 4%;
+  }
+}
+
+.founders-strip {
+  background: linear-gradient(90deg, var(--blue), #3b7bff);
+  color: #fff;
+}
+.founders-strip .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 13px 32px;
+  flex-wrap: wrap;
+  text-align: center;
+  font-size: 14.5px;
+}
+.founders-strip strong {
+  font-family: var(--display);
+  font-weight: 700;
+}
+.founders-strip span.sep {
+  opacity: 0.5;
+}
+.founders-strip a {
+  text-decoration: underline;
+  font-weight: 700;
+  white-space: nowrap;
+}
