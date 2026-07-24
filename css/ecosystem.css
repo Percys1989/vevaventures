@@ -16,7 +16,18 @@
   background: linear-gradient(150deg, var(--deep), #123a94);
   position: relative;
   overflow: hidden;
+  transition: all 0.3s ease;
 }
+.eco-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  
+}
+.eco-card:hover .eco-icon-box {
+  transform: rotate(-6deg) scale(1.05);
+  transition: 0.35s;
+}
+
 .eco-card::after {
   content: "";
   position: absolute;
@@ -31,12 +42,41 @@
   top: -60px;
   right: -60px;
 }
-.eco-card .eco-icon {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 20px;
-  color: var(--mint);
+.eco-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 24px;
   position: relative;
+  z-index: 2;
+}
+
+.eco-icon-box {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  flex-shrink: 0;
+}
+
+.eco-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--mint);
+}
+
+.eco-text h3 {
+  margin: 0 0 6px;
+}
+
+.eco-text p {
+  margin: 0;
 }
 .eco-card h3 {
   font-family: var(--display);
@@ -51,16 +91,25 @@
   margin-bottom: 16px;
   position: relative;
 }
-.eco-card ul li {
-  font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 5px 0;
-  display: flex;
-  gap: 8px;
-  position: relative;
+.eco-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.eco-card ul li::before {
-  content: "↗";
-  color: var(--mint);
-  flex-shrink: 0;
+
+.eco-card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+}
+
+.eco-card li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 10px var(--mint);
 }

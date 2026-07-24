@@ -79,3 +79,45 @@
   background: var(--sky);
   color: var(--deep);
 }
+.rm-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.rm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(11, 42, 107, 0.12);
+  border-color: rgba(30, 94, 255, 0.25);
+}
+
+.rm-dot {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.rm-card:hover .rm-dot {
+  transform: scale(1.15);
+}
+
+.rm-card.is-active .rm-dot {
+  animation: rmPulse 2s ease-in-out infinite;
+}
+@keyframes rmPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 6px rgba(30, 94, 255, 0.14);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(30, 94, 255, 0.08);
+  }
+}
+
+.rm-tag {
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.rm-card:hover .rm-tag {
+  background: rgba(30, 94, 255, 0.1);
+}
