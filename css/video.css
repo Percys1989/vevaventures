@@ -1,7 +1,7 @@
 /* ---------- VIDEO / PRODUCT DEMO ---------- */
 .video-section {
   background: linear-gradient(180deg, #051436 0%, var(--deep2) 100%);
-  padding: 90px 0;
+  padding: 50px 0;
 }
 .video-section .section-head p {
   color: rgba(255, 255, 255, 0.65);

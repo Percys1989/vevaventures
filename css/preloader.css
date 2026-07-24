@@ -14,6 +14,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
   transition:
     opacity 0.6s ease,
     visibility 0.6s ease;
@@ -23,13 +24,131 @@
   visibility: hidden;
   pointer-events: none;
 }
+#preloader.is-complete .pl-content {
+  transform: scale(1.04);
+}
 body.is-loading {
   overflow: hidden;
+}
+
+.pl-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  animation: plEnter 0.7s ease both;
+  transition: transform 0.5s ease;
+}
+@keyframes plEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Breathing glow behind the building */
+.pl-glow {
+  position: absolute;
+  z-index: 1;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(79, 163, 247, 0.35),
+    rgba(55, 226, 160, 0.08) 55%,
+    transparent 75%
+  );
+  filter: blur(10px);
+  animation: plGlow 3s ease-in-out infinite;
+}
+@keyframes plGlow {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+/* Particles rising past the building, echoing the hero trajectory */
+.pl-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.pl-particle {
+  position: absolute;
+  bottom: -20px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 8px 1px rgba(55, 226, 160, 0.6);
+  opacity: 0;
+  animation: plRise 3.2s ease-in infinite;
+}
+.pl-particle.p1 {
+  left: 30%;
+  animation-delay: 0.1s;
+  background: var(--blue-bright);
+  box-shadow: 0 0 8px 1px rgba(79, 163, 247, 0.6);
+}
+.pl-particle.p2 {
+  left: 42%;
+  animation-delay: 0.9s;
+}
+.pl-particle.p3 {
+  left: 55%;
+  animation-delay: 0.4s;
+  background: var(--blue-bright);
+  box-shadow: 0 0 8px 1px rgba(79, 163, 247, 0.6);
+}
+.pl-particle.p4 {
+  left: 63%;
+  animation-delay: 1.4s;
+}
+.pl-particle.p5 {
+  left: 38%;
+  animation-delay: 1.9s;
+}
+.pl-particle.p6 {
+  left: 58%;
+  animation-delay: 2.3s;
+  background: var(--blue-bright);
+  box-shadow: 0 0 8px 1px rgba(79, 163, 247, 0.6);
+}
+@keyframes plRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-360px);
+  }
 }
 
 .pl-svg {
   width: 190px;
   height: 190px;
+  position: relative;
 }
 .pl-floor {
   stroke: var(--blue-bright);
@@ -100,6 +219,31 @@ body.is-loading {
   }
 }
 
+/* Completion ring pulse */
+.pl-ring {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--mint);
+  opacity: 0;
+  transform: scale(0.6);
+}
+#preloader.is-complete .pl-ring {
+  animation: plRingPulse 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+}
+@keyframes plRingPulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
 .pl-label {
   font-family: var(--display);
   font-weight: 600;
@@ -130,12 +274,17 @@ body.is-loading {
   }
 }
 
+.pl-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
 .pl-bar {
   width: 160px;
   height: 3px;
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.14);
-  margin-top: 16px;
   overflow: hidden;
 }
 .pl-bar-fill {
@@ -149,12 +298,22 @@ body.is-loading {
     width: 100%;
   }
 }
+.pl-percent {
+  font-family: var(--mono, var(--display));
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-bright);
+  min-width: 34px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .pl-floor,
   .pl-roof,
   .pl-window,
-  .pl-bar-fill {
+  .pl-bar-fill,
+  .pl-glow,
+  .pl-particle,
+  .pl-content {
     animation-duration: 0.01s !important;
     animation-delay: 0s !important;
   }
