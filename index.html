@@ -601,6 +601,17 @@
             actio="mailer.php"
             method="POST"
           >
+            <!-- Honeypot anti-spam: humans never see or fill this field -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="fwebsite">Website</label>
+              <input
+                type="text"
+                id="fwebsite"
+                name="fwebsite"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
             <div class="field-row">
               <div class="field">
                 <label for="fname">Full Name</label

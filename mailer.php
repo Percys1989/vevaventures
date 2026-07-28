@@ -9,6 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit("Method not allowed");
 }
 
+if (!empty($_POST["fwebsite"])) {
+    header("Content-Type: application/json");
+    echo json_encode(["success" => true]);
+    exit;
+}
+
 // --- Collect + sanitize fields ---
 function clean($value) {
     $value = trim($value);
