@@ -1,320 +1,121 @@
-/* ---------- PRELOADER: building rises floor by floor ---------- */
+body.is-loading {
+  overflow: hidden;
+}
+
 #preloader {
   position: fixed;
   inset: 0;
-  z-index: 999;
-  background:
-    radial-gradient(
-      1100px 620px at 78% -10%,
-      rgba(79, 163, 247, 0.5),
-      transparent 60%
-    ),
-    linear-gradient(160deg, var(--deep) 0%, var(--deep2) 65%, #051436 100%);
+  z-index: 9999;
+  background: linear-gradient(
+    160deg,
+    var(--deep) 0%,
+    var(--deep2) 65%,
+    #051436 100%
+  );
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  overflow: hidden;
   transition:
-    opacity 0.6s ease,
-    visibility 0.6s ease;
+    opacity 0.8s ease,
+    visibility 0.8s ease;
 }
 #preloader.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
-#preloader.is-complete .pl-content {
-  transform: scale(1.04);
-}
-body.is-loading {
-  overflow: hidden;
-}
 
-.pl-content {
-  position: relative;
-  z-index: 2;
+.pl-eco {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  animation: plEnter 0.7s ease both;
-  transition: transform 0.5s ease;
+  align-items: center;
+  gap: 14px;
+  height: 120px;
+  justify-content: center;
 }
-@keyframes plEnter {
-  from {
-    opacity: 0;
-    transform: scale(0.88);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Breathing glow behind the building */
-.pl-glow {
-  position: absolute;
-  z-index: 1;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(79, 163, 247, 0.35),
-    rgba(55, 226, 160, 0.08) 55%,
-    transparent 75%
-  );
-  filter: blur(10px);
-  animation: plGlow 3s ease-in-out infinite;
-}
-@keyframes plGlow {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 1;
-  }
-}
-
-/* Particles rising past the building, echoing the hero trajectory */
-.pl-particles {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-.pl-particle {
-  position: absolute;
-  bottom: -20px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--mint);
-  box-shadow: 0 0 8px 1px rgba(55, 226, 160, 0.6);
+.pl-eco-icon {
+  font-size: 70px;
+  color: var(--blue-bright);
   opacity: 0;
-  animation: plRise 3.2s ease-in infinite;
+  transform: scale(0.7) rotate(6deg);
+  transition:
+    opacity 0.26s ease,
+    transform 0.26s ease;
+  filter: drop-shadow(0 0 14px rgba(79, 163, 247, 0.45));
 }
-.pl-particle.p1 {
-  left: 30%;
-  animation-delay: 0.1s;
-  background: var(--blue-bright);
-  box-shadow: 0 0 8px 1px rgba(79, 163, 247, 0.6);
+.pl-eco-icon.is-visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
-.pl-particle.p2 {
-  left: 42%;
-  animation-delay: 0.9s;
-}
-.pl-particle.p3 {
-  left: 55%;
-  animation-delay: 0.4s;
-  background: var(--blue-bright);
-  box-shadow: 0 0 8px 1px rgba(79, 163, 247, 0.6);
-}
-.pl-particle.p4 {
-  left: 63%;
-  animation-delay: 1.4s;
-}
-.pl-particle.p5 {
-  left: 38%;
-  animation-delay: 1.9s;
-}
-.pl-particle.p6 {
-  left: 58%;
-  animation-delay: 2.3s;
-  background: var(--blue-bright);
-  box-shadow: 0 0 8px 1px rgba(79, 163, 247, 0.6);
-}
-@keyframes plRise {
-  0% {
-    opacity: 0;
-    transform: translateY(0);
-  }
-  15% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-360px);
-  }
+.pl-eco-label {
+  font-family: var(--display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
 }
 
-.pl-svg {
-  width: 190px;
-  height: 190px;
-  position: relative;
+.pl-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+  margin-top: 8px;
 }
-.pl-floor {
-  stroke: var(--blue-bright);
-  stroke-width: 2.4;
-  fill: rgba(79, 163, 247, 0.08);
-  stroke-dasharray: 180;
-  stroke-dashoffset: 180;
-  animation: plDraw 0.55s ease forwards;
+.pl-veva {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 100px;
+  letter-spacing: 0.06em;
+  color: #fff;
 }
-.pl-floor.f1 {
-  animation-delay: 0.05s;
-}
-.pl-floor.f2 {
-  animation-delay: 0.35s;
-}
-.pl-floor.f3 {
-  animation-delay: 0.65s;
-}
-.pl-floor.f4 {
-  animation-delay: 0.95s;
-}
-.pl-roof {
-  stroke: var(--mint);
-  stroke-width: 2.6;
-  fill: none;
-  stroke-dasharray: 140;
-  stroke-dashoffset: 140;
-  animation: plDraw 0.5s ease forwards;
-  animation-delay: 1.25s;
-}
-.pl-window {
-  fill: var(--blue-bright);
-  opacity: 0;
-  animation: plWin 0.4s ease forwards;
-}
-.pl-w1 {
-  animation-delay: 0.3s;
-}
-.pl-w2 {
-  animation-delay: 0.3s;
-}
-.pl-w3 {
-  animation-delay: 0.6s;
-}
-.pl-w4 {
-  animation-delay: 0.6s;
-}
-.pl-w5 {
-  animation-delay: 0.9s;
-}
-.pl-w6 {
-  animation-delay: 0.9s;
-}
-.pl-w7 {
-  animation-delay: 1.2s;
-}
-.pl-w8 {
-  animation-delay: 1.2s;
-}
-@keyframes plDraw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes plWin {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Completion ring pulse */
-.pl-ring {
-  position: absolute;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  border: 2px solid var(--mint);
-  opacity: 0;
-  transform: scale(0.6);
-}
-#preloader.is-complete .pl-ring {
-  animation: plRingPulse 0.8s ease-out forwards;
-  animation-delay: 0.1s;
-}
-@keyframes plRingPulse {
-  0% {
-    opacity: 0.8;
-    transform: scale(0.6);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(2.4);
-  }
-}
-
-.pl-label {
+.pl-ventures {
   font-family: var(--display);
   font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 26px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.pl-label::after {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--mint);
-  animation: plPulse 1s ease-in-out infinite;
-}
-@keyframes plPulse {
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 1;
-  }
+  font-size: 80px;
+  letter-spacing: 0.22em;
+  color: #87ceeb;
+  line-height: 1;
 }
 
-.pl-bar-row {
+.pl-counter-wrap {
+  margin-top: 26px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  margin-top: 16px;
+  gap: 8px;
 }
-.pl-bar {
+.pl-counter-text {
+  font-family: var(--display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+}
+.pl-counter-text span {
+  color: var(--blue-bright);
+  font-weight: 700;
+}
+.pl-bar-track {
   width: 160px;
-  height: 3px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.14);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
   overflow: hidden;
 }
 .pl-bar-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--blue-bright), var(--mint));
-  animation: plBar 1.7s ease forwards;
-}
-@keyframes plBar {
-  to {
-    width: 100%;
-  }
-}
-.pl-percent {
-  font-family: var(--mono, var(--display));
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--blue-bright);
-  min-width: 34px;
+  background: linear-gradient(90deg, var(--blue-bright), #87ceeb);
+  border-radius: 2px;
+  transition: width 0.05s linear;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pl-floor,
-  .pl-roof,
-  .pl-window,
-  .pl-bar-fill,
-  .pl-glow,
-  .pl-particle,
-  .pl-content {
-    animation-duration: 0.01s !important;
-    animation-delay: 0s !important;
+  .pl-eco-icon,
+  .pl-bar-fill {
+    transition-duration: 0.01s !important;
   }
 }

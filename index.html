@@ -31,95 +31,140 @@
     <link rel="stylesheet" href="css/preloader.css" />
   </head>
   <body class="is-loading">
-    <div id="preloader" aria-hidden="true">
-      <div class="pl-glow"></div>
-
-      <div class="pl-particles">
-        <span class="pl-particle p1"></span>
-        <span class="pl-particle p2"></span>
-        <span class="pl-particle p3"></span>
-        <span class="pl-particle p4"></span>
-        <span class="pl-particle p5"></span>
-        <span class="pl-particle p6"></span>
+    <div id="preloader">
+      <div class="pl-eco">
+        <div class="pl-eco-icon" id="plEcoIcon">
+          <i class="fa-solid fa-building"></i>
+        </div>
+        <div
+          class="pl-eco-label"
+          id="plEcoLabel"
+          data-en="Property Management"
+          data-es="Gestión de Propiedades"
+        >
+          Property Management
+        </div>
       </div>
 
-      <div class="pl-content">
-        <svg
-          class="pl-svg"
-          viewBox="0 0 120 140"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect class="pl-floor f1" x="20" y="100" width="80" height="30" />
-          <rect class="pl-floor f2" x="20" y="72" width="80" height="28" />
-          <rect class="pl-floor f3" x="20" y="44" width="80" height="28" />
-          <rect class="pl-floor f4" x="20" y="20" width="80" height="24" />
-          <path class="pl-roof" d="M14,20 L60,4 L106,20" />
-          <rect class="pl-window pl-w1" x="30" y="108" width="10" height="14" />
-          <rect class="pl-window pl-w2" x="80" y="108" width="10" height="14" />
-          <rect class="pl-window pl-w3" x="30" y="80" width="10" height="10" />
-          <rect class="pl-window pl-w4" x="80" y="80" width="10" height="10" />
-          <rect class="pl-window pl-w5" x="30" y="52" width="10" height="10" />
-          <rect class="pl-window pl-w6" x="80" y="52" width="10" height="10" />
-          <rect class="pl-window pl-w7" x="30" y="28" width="10" height="8" />
-          <rect class="pl-window pl-w8" x="80" y="28" width="10" height="8" />
-        </svg>
+      <div class="pl-brand">
+        <span class="pl-veva">VEVA</span>
+        <span class="pl-ventures">VENTURES</span>
+      </div>
 
-        <div class="pl-ring"></div>
-
-        <div class="pl-label">Building your portfolio</div>
-        <div class="pl-bar-row">
-          <div class="pl-bar"><div class="pl-bar-fill"></div></div>
-          <span class="pl-percent" id="plPercent">0%</span>
+      <div class="pl-counter-wrap">
+        <p class="pl-counter-text">
+          <span data-en="Loading" data-es="Cargando">Loading</span>
+          <span id="plPercent">0</span>%
+        </p>
+        <div class="pl-bar-track">
+          <div class="pl-bar-fill" id="plBar"></div>
         </div>
       </div>
     </div>
 
     <header class="site">
       <div class="wrap nav">
-        <a href="#top" class="logo"><span class="mark">V</span>VEVA VENTURES</a>
+        <a href="#top" class="logo">
+          <img
+            src="images/logo/Logos edit_Page 1.png"
+            alt="VEVA Ventures"
+            class="logo-img"
+          />
+          <span class="logo-text">
+            <span class="logo-veva">VEVA</span>
+            <span class="logo-ventures">VENTURES</span>
+          </span>
+        </a>
         <nav class="nav-links">
-          <a href="#platform">Platform</a>
-          <a href="#roadmap">Roadmap</a>
-          <a href="#ecosystem">Ecosystem</a>
-          <a href="#founders">Founders Offer</a>
+          <a href="#platform" data-en="Platform" data-es="Plataforma"
+            >Platform</a
+          >
+          <a href="#roadmap" data-en="Roadmap" data-es="Hoja de Ruta"
+            >Roadmap</a
+          >
+          <a href="#ecosystem" data-en="Ecosystem" data-es="Ecosistema"
+            >Ecosystem</a
+          >
+          <a
+            href="#founders"
+            data-en="Founders Offer"
+            data-es="Oferta Fundadores"
+            >Founders Offer</a
+          >
         </nav>
-        <a href="#founders" class="btn btn-primary nav-cta"
+        <a
+          href="#founders"
+          class="btn btn-primary nav-cta"
+          data-en="Join Founders List"
+          data-es="Únete a Fundadores"
           >Join Founders List</a
         >
+        <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma">
+          <i class="fa-solid fa-globe"></i>
+          <span id="langToggleLabel">ES</span>
+        </button>
       </div>
     </header>
 
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div class="fade-up">
-          <div class="eyebrow on-dark">
+          <div
+            class="eyebrow on-dark"
+            data-en="PROPERTY MANAGEMENT · LAUNCHING 2026"
+            data-es="GESTIÓN DE PROPIEDADES · LANZAMIENTO 2026"
+          >
             PROPERTY MANAGEMENT · LAUNCHING 2026
           </div>
-          <h1>Scale your<br />portfolio <span class="accent">upward</span>.</h1>
-          <p class="lede">
+          <h1
+            data-en-html='Scale your<br />portfolio <span class="accent">upward</span>.'
+            data-es-html='Escala tu<br />portafolio <span class="accent">hacia arriba</span>.'
+          >
+            Scale your<br />portfolio <span class="accent">upward</span>.
+          </h1>
+          <p
+            class="lede"
+            data-en="VEVA helps real estate investors manage properties, track cash flow, and scale portfolios — all in one place, moving in one direction: up."
+            data-es="VEVA ayuda a los inversionistas inmobiliarios a gestionar propiedades, controlar el flujo de caja y escalar portafolios — todo en un solo lugar, en una sola dirección: hacia arriba."
+          >
             VEVA helps real estate investors manage properties, track cash flow,
             and scale portfolios — all in one place, moving in one direction:
             up.
           </p>
           <div class="hero-actions">
-            <a href="#founders" class="btn btn-primary"
+            <a
+              href="#founders"
+              class="btn btn-primary"
+              data-en="Join the Founders List →"
+              data-es="Únete a la Lista de Fundadores →"
               >Join the Founders List →</a
             >
-            <a href="#roadmap" class="btn btn-ghost-dark">See what's coming</a>
+            <a
+              href="#roadmap"
+              class="btn btn-ghost-dark"
+              data-en="See what's coming"
+              data-es="Mira lo que viene"
+              >See what's coming</a
+            >
           </div>
           <div class="stat-row">
             <div class="stat">
               <div class="n">2026</div>
-              <div class="l">MVP Launch</div>
+              <div class="l" data-en="MVP Launch" data-es="Lanzamiento MVP">
+                MVP Launch
+              </div>
             </div>
             <div class="stat">
               <div class="n">60%</div>
-              <div class="l">Off First Year</div>
+              <div class="l" data-en="Off First Year" data-es="Dcto. 1er Año">
+                Off First Year
+              </div>
             </div>
             <div class="stat">
               <div class="n">100</div>
-              <div class="l">Founder Spots</div>
+              <div class="l" data-en="Founder Spots" data-es="Cupos Fundadores">
+                Founder Spots
+              </div>
             </div>
           </div>
         </div>
@@ -152,7 +197,13 @@
               ><span class="fc-badge">97%</span>
             </div>
             <div class="fc-val">$7,430</div>
-            <div class="fc-sub">Monthly cash flow</div>
+            <div
+              class="fc-sub"
+              data-en="Monthly cash flow"
+              data-es="Flujo de caja mensual"
+            >
+              Monthly cash flow
+            </div>
           </div>
           <div class="float-card fc2">
             <div class="fc-top">
@@ -160,7 +211,13 @@
               ><span class="fc-badge">92%</span>
             </div>
             <div class="fc-val">$2,860</div>
-            <div class="fc-sub">Monthly cash flow</div>
+            <div
+              class="fc-sub"
+              data-en="Monthly cash flow"
+              data-es="Flujo de caja mensual"
+            >
+              Monthly cash flow
+            </div>
           </div>
           <div class="float-card fc3">
             <div class="fc-top">
@@ -168,7 +225,13 @@
               ><span class="fc-badge">100%</span>
             </div>
             <div class="fc-val">$4,120</div>
-            <div class="fc-sub">Monthly cash flow</div>
+            <div
+              class="fc-sub"
+              data-en="Monthly cash flow"
+              data-es="Flujo de caja mensual"
+            >
+              Monthly cash flow
+            </div>
           </div>
         </div>
       </div>
@@ -176,26 +239,57 @@
 
     <div class="founders-strip">
       <div class="wrap">
-        <strong>FOUNDERS LAUNCH OFFER</strong>
+        <strong data-en="FOUNDERS LAUNCH OFFER" data-es="OFERTA DE LANZAMIENTO"
+          >FOUNDERS LAUNCH OFFER</strong
+        >
         <span class="sep">·</span>
-        <span>60% off for 1 year, first 100 users</span>
+        <span
+          data-en="60% off for 1 year, first 100 users"
+          data-es="60% de dcto. por 1 año, primeros 100 usuarios"
+          >60% off for 1 year, first 100 users</span
+        >
         <span class="sep">·</span>
-        <a href="#founders">Claim your spot →</a>
+        <a
+          href="#founders"
+          data-en="Claim your spot →"
+          data-es="Reclama tu cupo →"
+          >Claim your spot →</a
+        >
       </div>
     </div>
 
     <section class="video-section" id="demo">
       <div class="wrap">
         <div class="section-head center fade-up">
-          <div class="eyebrow">SEE IT IN ACTION</div>
-          <h2>Watch VEVA in motion.</h2>
-          <p class="center">
+          <div
+            class="eyebrow"
+            data-en="SEE IT IN ACTION"
+            data-es="VELO EN ACCIÓN"
+          >
+            SEE IT IN ACTION
+          </div>
+          <h2
+            data-en="Watch VEVA in motion."
+            data-es="Mira a VEVA en movimiento."
+          >
+            Watch VEVA in motion.
+          </h2>
+          <p
+            class="center"
+            data-en="A quick look at how investors manage their portfolio, day to day."
+            data-es="Un vistazo rápido a cómo los inversionistas gestionan su portafolio, día a día."
+          >
             A quick look at how investors manage their portfolio, day to day.
           </p>
         </div>
 
         <div class="video-frame fade-up">
-          <span class="video-badge">Product Demo</span>
+          <span
+            class="video-badge"
+            data-en="Product Demo"
+            data-es="Demo del Producto"
+            >Product Demo</span
+          >
 
           <!-- Reemplaza el src por el video real del cliente (Vimeo, YouTube, o archivo propio) -->
           <video id="demoVideo" preload="metadata" playsinline>
@@ -212,11 +306,25 @@
     <section id="platform">
       <div class="wrap">
         <div class="section-head center fade-up">
-          <div class="eyebrow" style="justify-content: center">
+          <div
+            class="eyebrow"
+            style="justify-content: center"
+            data-en="THE PLATFORM"
+            data-es="PLATAFORMA"
+          >
             THE PLATFORM
           </div>
-          <h2>Everything your portfolio needs, in one place.</h2>
-          <p class="center">
+          <h2
+            data-en="Everything your portfolio needs, in one place."
+            data-es="Todo lo que tu portafolio necesita, en un solo lugar."
+          >
+            Everything your portfolio needs, in one place.
+          </h2>
+          <p
+            class="center"
+            data-en="Five modules built for how investors actually run their properties day to day."
+            data-es="Cinco módulos diseñados para cómo los inversionistas realmente administran sus propiedades día a día."
+          >
             Five modules built for how investors actually run their properties
             day to day.
           </p>
@@ -265,8 +373,13 @@
               </svg>
             </div>
             <div class="feature-text">
-              <h3>Portfolio Dashboard</h3>
-              <p>
+              <h3 data-en="Portfolio Dashboard" data-es="Panel de Portafolio">
+                Portfolio Dashboard
+              </h3>
+              <p
+                data-en="See all your properties in one place — occupancy, rent status, and open items, updated live."
+                data-es="Ve todas tus propiedades en un solo lugar — ocupación, estado de renta y pendientes, actualizado en vivo."
+              >
                 See all your properties in one place — occupancy, rent status,
                 and open items, updated live.
               </p>
@@ -293,8 +406,16 @@
               </svg>
             </div>
             <div class="feature-text">
-              <h3>Cash Flow Tracking</h3>
-              <p>
+              <h3
+                data-en="Cash Flow Tracking"
+                data-es="Control de Flujo de Caja"
+              >
+                Cash Flow Tracking
+              </h3>
+              <p
+                data-en="Income and expenses post automatically, so your numbers stay current without manual work."
+                data-es="Los ingresos y gastos se registran automáticamente, así tus números se mantienen al día sin trabajo manual."
+              >
                 Income and expenses post automatically, so your numbers stay
                 current without manual work.
               </p>
@@ -331,8 +452,13 @@
               </svg>
             </div>
             <div class="feature-text">
-              <h3>NOI Analytics</h3>
-              <p>
+              <h3 data-en="NOI Analytics" data-es="Análisis de NOI">
+                NOI Analytics
+              </h3>
+              <p
+                data-en="Monitor performance and profitability by property or across your whole portfolio."
+                data-es="Monitorea el rendimiento y la rentabilidad por propiedad o en todo tu portafolio."
+              >
                 Monitor performance and profitability by property or across your
                 whole portfolio.
               </p>
@@ -358,8 +484,13 @@
               </svg>
             </div>
             <div class="feature-text">
-              <h3>Tenant Management</h3>
-              <p>
+              <h3 data-en="Tenant Management" data-es="Gestión de Inquilinos">
+                Tenant Management
+              </h3>
+              <p
+                data-en="Screen tenants, collect rent, and keep every lease and message organized in one place."
+                data-es="Evalúa inquilinos, cobra la renta y mantén cada contrato y mensaje organizado en un solo lugar."
+              >
                 Screen tenants, collect rent, and keep every lease and message
                 organized in one place.
               </p>
@@ -384,8 +515,13 @@
               </svg>
             </div>
             <div class="feature-text">
-              <h3>Vendor Management</h3>
-              <p>
+              <h3 data-en="Vendor Management" data-es="Gestión de Contratistas">
+                Vendor Management
+              </h3>
+              <p
+                data-en="Manage contractors and service providers, and track work orders start to finish."
+                data-es="Gestiona contratistas y proveedores de servicios, y da seguimiento a las órdenes de trabajo de principio a fin."
+              >
                 Manage contractors and service providers, and track work orders
                 start to finish.
               </p>
@@ -404,8 +540,16 @@
               </svg>
             </div>
             <div class="feature-text">
-              <h3>Automation &amp; Alerts</h3>
-              <p>
+              <h3
+                data-en="Automation &amp; Alerts"
+                data-es="Automatización y Alertas"
+              >
+                Automation &amp; Alerts
+              </h3>
+              <p
+                data-en="Get notified the moment something needs your attention — late rent, a lease renewal, a request."
+                data-es="Recibe una notificación en el momento en que algo requiera tu atención — renta atrasada, renovación de contrato, una solicitud."
+              >
                 Get notified the moment something needs your attention — late
                 rent, a lease renewal, a request.
               </p>
@@ -418,9 +562,25 @@
     <section class="roadmap-section" id="roadmap">
       <div class="wrap">
         <div class="section-head center fade-up">
-          <div class="eyebrow" style="justify-content: center">THE ROADMAP</div>
-          <h2>Our path to the #1 investor ecosystem.</h2>
-          <p class="center">
+          <div
+            class="eyebrow"
+            style="justify-content: center"
+            data-en="THE ROADMAP"
+            data-es="LA HOJA DE RUTA"
+          >
+            THE ROADMAP
+          </div>
+          <h2
+            data-en="Our path to the #1 investor ecosystem."
+            data-es="Nuestro camino hacia el ecosistema de inversionistas #1."
+          >
+            Our path to the #1 investor ecosystem.
+          </h2>
+          <p
+            class="center"
+            data-en="Property management is where we start. Here's where we're headed."
+            data-es="La gestión de propiedades es donde empezamos. Aquí es hacia donde vamos."
+          >
             Property management is where we start. Here's where we're headed.
           </p>
         </div>
@@ -431,14 +591,40 @@
               <div class="rm-dot"><span>1</span></div>
               <div class="rm-meta">
                 <div class="rm-year">2026</div>
-                <div class="rm-title">MVP Launch</div>
+                <div
+                  class="rm-title"
+                  data-en="MVP Launch"
+                  data-es="Lanzamiento MVP"
+                >
+                  MVP Launch
+                </div>
               </div>
             </div>
             <div class="rm-tags">
-              <span class="rm-tag">Portfolio dashboard</span>
-              <span class="rm-tag">Cash flow tracking</span>
-              <span class="rm-tag">NOI analytics</span>
-              <span class="rm-tag">Tenant &amp; vendor mgmt</span>
+              <span
+                class="rm-tag"
+                data-en="Portfolio dashboard"
+                data-es="Panel de portafolio"
+                >Portfolio dashboard</span
+              >
+              <span
+                class="rm-tag"
+                data-en="Cash flow tracking"
+                data-es="Control de flujo de caja"
+                >Cash flow tracking</span
+              >
+              <span
+                class="rm-tag"
+                data-en="NOI analytics"
+                data-es="Análisis de NOI"
+                >NOI analytics</span
+              >
+              <span
+                class="rm-tag"
+                data-en="Tenant &amp; vendor mgmt"
+                data-es="Inquilinos y contratistas"
+                >Tenant &amp; vendor mgmt</span
+              >
             </div>
           </div>
 
@@ -451,10 +637,30 @@
               </div>
             </div>
             <div class="rm-tags">
-              <span class="rm-tag">Investor VIP Club</span>
-              <span class="rm-tag">Education platform</span>
-              <span class="rm-tag">Deal marketplace</span>
-              <span class="rm-tag">AI analytics</span>
+              <span
+                class="rm-tag"
+                data-en="Investor VIP Club"
+                data-es="Club VIP de Inversionistas"
+                >Investor VIP Club</span
+              >
+              <span
+                class="rm-tag"
+                data-en="Education platform"
+                data-es="Plataforma educativa"
+                >Education platform</span
+              >
+              <span
+                class="rm-tag"
+                data-en="Deal marketplace"
+                data-es="Mercado de negocios"
+                >Deal marketplace</span
+              >
+              <span
+                class="rm-tag"
+                data-en="AI analytics"
+                data-es="Análisis con IA"
+                >AI analytics</span
+              >
             </div>
           </div>
 
@@ -462,15 +668,43 @@
             <div class="rm-head">
               <div class="rm-dot"><span>3</span></div>
               <div class="rm-meta">
-                <div class="rm-year">FUTURE</div>
-                <div class="rm-title">Complete Ecosystem</div>
+                <div class="rm-year" data-en="FUTURE" data-es="FUTURO">
+                  FUTURE
+                </div>
+                <div
+                  class="rm-title"
+                  data-en="Complete Ecosystem"
+                  data-es="Ecosistema Completo"
+                >
+                  Complete Ecosystem
+                </div>
               </div>
             </div>
             <div class="rm-tags">
-              <span class="rm-tag">Business management</span>
-              <span class="rm-tag">Private deal network</span>
-              <span class="rm-tag">Multi-asset support</span>
-              <span class="rm-tag">Global community</span>
+              <span
+                class="rm-tag"
+                data-en="Business management"
+                data-es="Gestión empresarial"
+                >Business management</span
+              >
+              <span
+                class="rm-tag"
+                data-en="Private deal network"
+                data-es="Red privada de negocios"
+                >Private deal network</span
+              >
+              <span
+                class="rm-tag"
+                data-en="Multi-asset support"
+                data-es="Soporte multi-activo"
+                >Multi-asset support</span
+              >
+              <span
+                class="rm-tag"
+                data-en="Global community"
+                data-es="Comunidad global"
+                >Global community</span
+              >
             </div>
           </div>
         </div>
@@ -480,10 +714,18 @@
     <section id="ecosystem">
       <div class="wrap">
         <div class="section-head center fade-up">
-          <div class="eyebrow" style="justify-content: center">
+          <div
+            class="eyebrow"
+            style="justify-content: center"
+            data-en="BEYOND PROPERTY MANAGEMENT"
+            data-es="MÁS ALLÁ DE LA GESTIÓN DE PROPIEDADES"
+          >
             BEYOND PROPERTY MANAGEMENT
           </div>
-          <h2>
+          <h2
+            data-en-html="Start with property management.<br />Scale into a full ecosystem."
+            data-es-html="Empieza con la gestión de propiedades.<br />Escala hacia un ecosistema completo."
+          >
             Start with property management.<br />Scale into a full ecosystem.
           </h2>
         </div>
@@ -502,14 +744,36 @@
                 </svg>
               </div>
               <div class="eco-text">
-                <h3>Investor VIP Club</h3>
-                <p>Exclusive access for serious investors.</p>
+                <h3
+                  data-en="Investor VIP Club"
+                  data-es="Club VIP de Inversionistas"
+                >
+                  Investor VIP Club
+                </h3>
+                <p
+                  data-en="Exclusive access for serious investors."
+                  data-es="Acceso exclusivo para inversionistas serios."
+                >
+                  Exclusive access for serious investors.
+                </p>
               </div>
             </div>
             <ul>
-              <li>Off-market deals</li>
-              <li>Private investor network</li>
-              <li>Mastermind sessions</li>
+              <li
+                data-en="Off-market deals"
+                data-es="Negocios fuera de mercado"
+              >
+                Off-market deals
+              </li>
+              <li
+                data-en="Private investor network"
+                data-es="Red privada de inversionistas"
+              >
+                Private investor network
+              </li>
+              <li data-en="Mastermind sessions" data-es="Sesiones mastermind">
+                Mastermind sessions
+              </li>
             </ul>
           </div>
 
@@ -532,14 +796,33 @@
                 </svg>
               </div>
               <div class="eco-text">
-                <h3>Education Module</h3>
-                <p>Learn. Apply. Scale.</p>
+                <h3 data-en="Education Module" data-es="Módulo de Educación">
+                  Education Module
+                </h3>
+                <p
+                  data-en="Learn. Apply. Scale."
+                  data-es="Aprende. Aplica. Escala."
+                >
+                  Learn. Apply. Scale.
+                </p>
               </div>
             </div>
             <ul>
-              <li>Deal analysis</li>
-              <li>Scaling strategies</li>
-              <li>Real estate fundamentals</li>
+              <li data-en="Deal analysis" data-es="Análisis de negocios">
+                Deal analysis
+              </li>
+              <li
+                data-en="Scaling strategies"
+                data-es="Estrategias de escalamiento"
+              >
+                Scaling strategies
+              </li>
+              <li
+                data-en="Real estate fundamentals"
+                data-es="Fundamentos inmobiliarios"
+              >
+                Real estate fundamentals
+              </li>
             </ul>
           </div>
 
@@ -564,14 +847,31 @@
                 </svg>
               </div>
               <div class="eco-text">
-                <h3>Marketplace</h3>
-                <p>Find deals, partners, and services.</p>
+                <h3 data-en="Marketplace" data-es="Mercado">Marketplace</h3>
+                <p
+                  data-en="Find deals, partners, and services."
+                  data-es="Encuentra negocios, socios y servicios."
+                >
+                  Find deals, partners, and services.
+                </p>
               </div>
             </div>
             <ul>
-              <li>Off-market properties</li>
-              <li>Joint ventures</li>
-              <li>Vendors &amp; services</li>
+              <li
+                data-en="Off-market properties"
+                data-es="Propiedades fuera de mercado"
+              >
+                Off-market properties
+              </li>
+              <li data-en="Joint ventures" data-es="Empresas conjuntas">
+                Joint ventures
+              </li>
+              <li
+                data-en="Vendors &amp; services"
+                data-es="Proveedores y servicios"
+              >
+                Vendors &amp; services
+              </li>
             </ul>
           </div>
         </div>
@@ -582,15 +882,37 @@
       <div class="wrap">
         <div class="form-shell">
           <div class="form-copy fade-up">
-            <div class="eyebrow">FOUNDERS LAUNCH OFFER</div>
-            <h2>Join the VEVA Founders List.</h2>
-            <p>
+            <div
+              class="eyebrow"
+              data-en="FOUNDERS LAUNCH OFFER"
+              data-es="OFERTA DE LANZAMIENTO"
+            >
+              FOUNDERS LAUNCH OFFER
+            </div>
+            <h2
+              data-en="Join the VEVA Founders List."
+              data-es="Únete a la Lista de Fundadores de VEVA."
+            >
+              Join the VEVA Founders List.
+            </h2>
+            <p
+              data-en="Register now for exclusive launch benefits — locked in before the platform opens to the public in 2026."
+              data-es="Regístrate ahora para beneficios exclusivos de lanzamiento — asegurados antes de que la plataforma abra al público en 2026."
+            >
               Register now for exclusive launch benefits — locked in before the
               platform opens to the public in 2026.
             </p>
             <div class="offer-box">
-              <div class="big">60% OFF</div>
-              <div class="small">For 1 year · First 100 users only</div>
+              <div class="big" data-en="60% OFF" data-es="60% DCTO.">
+                60% OFF
+              </div>
+              <div
+                class="small"
+                data-en="For 1 year · First 100 users only"
+                data-es="Por 1 año · Solo primeros 100 usuarios"
+              >
+                For 1 year · First 100 users only
+              </div>
             </div>
           </div>
 
@@ -614,7 +936,8 @@
             </div>
             <div class="field-row">
               <div class="field">
-                <label for="fname">Full Name</label
+                <label for="fname" data-en="Full Name" data-es="Nombre Completo"
+                  >Full Name</label
                 ><input
                   id="fname"
                   type="text"
@@ -623,7 +946,11 @@
                 />
               </div>
               <div class="field">
-                <label for="femail">Email Address</label
+                <label
+                  for="femail"
+                  data-en="Email Address"
+                  data-es="Correo Electrónico"
+                  >Email Address</label
                 ><input
                   id="femail"
                   type="email"
@@ -634,7 +961,11 @@
             </div>
             <div class="field-row">
               <div class="field">
-                <label for="fphone">Phone Number</label
+                <label
+                  for="fphone"
+                  data-en="Phone Number"
+                  data-es="Número de Teléfono"
+                  >Phone Number</label
                 ><input
                   id="fphone"
                   type="tel"
@@ -642,33 +973,68 @@
                 />
               </div>
               <div class="field">
-                <label for="frole">Your Role</label>
+                <label for="frole" data-en="Your Role" data-es="Tu Rol"
+                  >Your Role</label
+                >
                 <select id="frole">
-                  <option>Property Manager</option>
-                  <option>Owner or Investor</option>
-                  <option>Tenant</option>
-                  <option>Interested in Property Administration</option>
+                  <option
+                    data-en="Property Manager"
+                    data-es="Administrador de Propiedades"
+                  >
+                    Property Manager
+                  </option>
+                  <option
+                    data-en="Owner or Investor"
+                    data-es="Propietario o Inversionista"
+                  >
+                    Owner or Investor
+                  </option>
+                  <option data-en="Tenant" data-es="Arrendatario">
+                    Tenant
+                  </option>
+                  <option
+                    data-en="Interested in Property Administration"
+                    data-es="Interesado en Administración de Propiedades"
+                  >
+                    Interested in Property Administration
+                  </option>
                 </select>
               </div>
             </div>
             <div class="field-row">
               <div class="field">
-                <label for="funits">Properties / Units You Manage</label>
+                <label
+                  for="funits"
+                  data-en="Properties / Units You Manage"
+                  data-es="Propiedades / Unidades que Administras"
+                  >Properties / Units You Manage</label
+                >
                 <select id="funits">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
-                  <option>More than 3</option>
-                  <option>Not applicable</option>
+                  <option data-en="More than 3" data-es="Más de 3">
+                    More than 3
+                  </option>
+                  <option data-en="Not applicable" data-es="No aplica">
+                    Not applicable
+                  </option>
                 </select>
               </div>
               <div class="field">
-                <label for="freferral">Referred By (optional)</label
+                <label
+                  for="freferral"
+                  data-en="Referred By (optional)"
+                  data-es="Referido Por (opcional)"
+                  >Referred By (optional)</label
                 ><input id="freferral" type="text" placeholder="Name or code" />
               </div>
             </div>
             <div class="field">
-              <label for="fchallenge"
+              <label
+                for="fchallenge"
+                data-en="Biggest challenge you expect VEVA to solve"
+                data-es="El mayor reto que esperas que VEVA resuelva"
                 >Biggest challenge you expect VEVA to solve</label
               ><textarea
                 id="fchallenge"
@@ -676,10 +1042,19 @@
                 placeholder="Tell us what's slowing you down today"
               ></textarea>
             </div>
-            <button class="btn btn-primary form-submit" type="submit">
+            <button
+              class="btn btn-primary form-submit"
+              type="submit"
+              data-en="Join the Founders List →"
+              data-es="Únete a la Lista de Fundadores →"
+            >
               Join the Founders List →
             </button>
-            <p class="form-note">
+            <p
+              class="form-note"
+              data-en="No spam. We'll only reach out about your Founders benefit and launch date."
+              data-es="Sin spam. Solo te contactaremos sobre tu beneficio de Fundador y la fecha de lanzamiento."
+            >
               No spam. We'll only reach out about your Founders benefit and
               launch date.
             </p>
@@ -693,9 +1068,12 @@
         <div class="footer-top">
           <div>
             <div class="footer-logo">VEVA VENTURES</div>
-            <p style="max-width: 260px">
-              Property management software for real estate investors — launching
-              2026.
+            <p
+              style="max-width: 260px"
+              data-en="The Operating System for Modern Investors. — launching 2026."
+              data-es="El Sistema Operativo para Inversionistas Modernos — lanzamiento 2026."
+            >
+              The Operating System for Modern Investors. — launching 2026.
             </p>
             <div class="social-row" style="margin-top: 16px">
               <a
@@ -721,20 +1099,37 @@
             </div>
           </div>
           <div class="footer-col">
-            <h4>Contact</h4>
+            <h4 data-en="Contact" data-es="Contacto">Contact</h4>
             <a href="https://wa.me/+15618007899">+1 (561) 800 7899</a>
+            <a href="mailto:software.contact@vevaventures.com"
+              >Software.contact@vevaventures.com</a
+            >
             <p>PO Box · Pompano Beach, FL 33066</p>
           </div>
           <div class="footer-col">
-            <h4>Explore</h4>
-            <a href="#platform">Platform</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#ecosystem">Ecosystem</a>
+            <h4 data-en="Explore" data-es="Explorar">Explore</h4>
+            <a href="#platform" data-en="Platform" data-es="Plataforma"
+              >Platform</a
+            >
+            <a href="#roadmap" data-en="Roadmap" data-es="Hoja de Ruta"
+              >Roadmap</a
+            >
+            <a href="#ecosystem" data-en="Ecosystem" data-es="Ecosistema"
+              >Ecosystem</a
+            >
           </div>
         </div>
         <div class="footer-bottom">
-          <span>© 2026 VEVA Ventures Software, Inc. All rights reserved.</span>
-          <span>Property Management Software</span>
+          <span
+            data-en="© 2026 VEVA Ventures Software, Inc. All rights reserved."
+            data-es="© 2026 VEVA Ventures Software, Inc. Todos los derechos reservados."
+            >© 2026 VEVA Ventures Software, Inc. All rights reserved.</span
+          >
+          <span
+            data-en="Property Management Software"
+            data-es="Software de Gestión de Propiedades"
+            >Property Management Software</span
+          >
         </div>
       </div>
     </footer>
@@ -742,5 +1137,6 @@
     <script src="js/video.js"></script>
     <script src="js/form.js"></script>
     <script src="js/preloader.js"></script>
+    <script src="js/i18n.js"></script>
   </body>
 </html>

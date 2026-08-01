@@ -15,25 +15,33 @@ header.site {
   height: 78px;
 }
 .logo {
-  font-family: var(--display);
-  font-weight: 700;
-  font-size: 20px;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--deep);
 }
-.logo .mark {
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
-  background: linear-gradient(135deg, var(--blue), var(--deep));
+.logo-img {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+.logo-text {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
+  flex-direction: column;
+  line-height: 1;
+}
+.logo-veva {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--deep);
+  letter-spacing: 0.5px;
+}
+.logo-ventures {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--veva-sky);
+  letter-spacing: 1.5px;
 }
 .nav-links {
   display: flex;
@@ -47,6 +55,27 @@ header.site {
   transition: color 0.18s ease;
 }
 .nav-links a:hover {
+  color: var(--deep);
+}
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--slate);
+  cursor: pointer;
+  transition:
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+.lang-toggle:hover {
+  border-color: var(--blue);
   color: var(--deep);
 }
 @media (max-width: 879px) {

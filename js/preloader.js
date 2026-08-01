@@ -1,44 +1,59 @@
 (function () {
-  var MIN_DISPLAY = 2000; // ms — lets the floors + roof + windows finish drawing
-  var start = Date.now();
-  var pre = document.getElementById("preloader");
+  var ecosystem = [
+    { icon: "fa-building", label: "Property Management" },
+    { icon: "fa-calculator", label: "Accounting" },
+    { icon: "fa-store", label: "Marketplace" },
+    { icon: "fa-users", label: "Investor Network" },
+    { icon: "fa-graduation-cap", label: "Education" },
+    { icon: "fa-robot", label: "AI Advisor" },
+    { icon: "fa-briefcase", label: "Business Management" },
+    { icon: "fa-layer-group", label: "Multi-Asset Management" },
+  ];
+
+  var preloader = document.getElementById("preloader");
+  var iconEl = document.getElementById("plEcoIcon");
+  var labelEl = document.getElementById("plEcoLabel");
   var percentEl = document.getElementById("plPercent");
-  if (!pre) {
+  var barEl = document.getElementById("plBar");
+
+  if (!preloader) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    preloader.classList.add("is-hidden");
+    document.body.classList.remove("is-loading");
     return;
   }
 
-  // Animate the percentage counter in sync with the progress bar (~1.7s)
-  if (percentEl) {
-    var duration = 1700;
-    var t0 = Date.now();
-    var tick = setInterval(function () {
-      var progress = Math.min(1, (Date.now() - t0) / duration);
-      percentEl.textContent = Math.round(progress * 100) + "%";
-      if (progress >= 1) {
-        clearInterval(tick);
-      }
-    }, 40);
-  }
-
-  function hide() {
-    var elapsed = Date.now() - start;
-    var wait = Math.max(0, MIN_DISPLAY - elapsed);
+  // --- Ciclo de íconos del ecosistema ---
+  var i = 0;
+  function showItem(index) {
+    iconEl.classList.remove("is-visible");
     setTimeout(function () {
-      pre.classList.add("is-complete"); // triggers the ring pulse + slight zoom
-      setTimeout(function () {
-        pre.classList.add("is-hidden");
-        document.body.classList.remove("is-loading");
-        setTimeout(function () {
-          pre.remove();
-        }, 650);
-      }, 350);
-    }, wait);
+      iconEl.innerHTML =
+        '<i class="fa-solid ' + ecosystem[index].icon + '"></i>';
+      labelEl.textContent = ecosystem[index].label;
+      iconEl.classList.add("is-visible");
+    }, 260); // coincide con el fade-out antes de cambiar contenido
   }
+  showItem(0);
+  var iconTimer = setInterval(function () {
+    i = (i + 1) % ecosystem.length;
+    showItem(i);
+  }, 900);
 
-  if (document.readyState === "complete") {
-    hide();
-  } else {
-    window.addEventListener("load", hide);
-  }
-  setTimeout(hide, 4500);
+  // --- Barra + porcentaje ---
+  var count = 0;
+  var barTimer = setInterval(function () {
+    count++;
+    percentEl.textContent = count;
+    barEl.style.width = count + "%";
+    if (count >= 100) {
+      clearInterval(barTimer);
+      clearInterval(iconTimer);
+      setTimeout(function () {
+        preloader.classList.add("is-hidden");
+        document.body.classList.remove("is-loading");
+      }, 400);
+    }
+  }, 55); // ~5.5s de carga total — suficiente para ver todo el ciclo de íconos
 })();
