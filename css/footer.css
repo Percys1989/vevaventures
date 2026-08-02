@@ -72,3 +72,28 @@ footer.site {
   flex-wrap: wrap;
   gap: 10px;
 }
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.footer-legal a {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  transition: color 0.18s ease;
+}
+.footer-legal a:hover {
+  color: #87ceeb;
+}
+.security-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 8px;
+  font-size: 12px;
+  color: rgba(135, 206, 235, 0.7);
+}
+.security-badge i {
+  font-size: 12px;
+}

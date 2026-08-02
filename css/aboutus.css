@@ -1,0 +1,166 @@
+.about-us {
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    var(--deep) 0%,
+    var(--deep2) 65%,
+    #051436 100%
+  );
+}
+.about-us::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    800px 500px at 15% 30%,
+    rgba(79, 163, 247, 0.12),
+    transparent 60%
+  );
+  animation: aboutDrift 8s ease-in-out infinite alternate;
+}
+@keyframes aboutDrift {
+  from {
+    transform: translate(-2%, -1%);
+  }
+  to {
+    transform: translate(3%, 2%);
+  }
+}
+
+.about-shell {
+  display: grid;
+  grid-template-columns: 220px 1fr 340px;
+  align-items: center;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Bloque 1: foto */
+.about-photo {
+  width: 260px;
+  height: 340px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.about-photo::before {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    rgba(79, 163, 247, 0.45),
+    rgba(135, 206, 235, 0.15) 55%,
+    transparent 75%
+  );
+  filter: blur(20px);
+  animation: aboutGlow 4s ease-in-out infinite;
+}
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+}
+/* Bloque 2: our why + descripción + firma */
+.about-content h2 {
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 10px 0 18px;
+}
+.about-content p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  max-width: 380px;
+}
+.about-signature {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 22px;
+}
+.signature-img {
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+.about-name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+}
+.about-title {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Bloque 3: quote card */
+.about-quote-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(135, 206, 235, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.quote-mark {
+  width: 30px;
+  height: 30px;
+  color: #87ceeb;
+  opacity: 0.7;
+  margin-bottom: 10px;
+}
+.about-quote-card blockquote {
+  margin: 0 0 20px;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+}
+.about-quote-attr .about-name {
+  font-size: 14px;
+}
+.about-quote-attr .about-title {
+  font-size: 12px;
+}
+.quote-logo-mark {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  width: 26px;
+  height: auto;
+  opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  .about-shell {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+  .about-content p {
+    max-width: 100%;
+  }
+  .about-signature {
+    justify-content: center;
+  }
+}
