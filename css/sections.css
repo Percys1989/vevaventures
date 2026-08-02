@@ -26,3 +26,7 @@ section {
   margin-left: auto;
   margin-right: auto;
 }
+.dark-zone {
+  position: relative;
+  background: linear-gradient(180deg, var(--deep) 0%, var(--deep2) 45%, #051436 100%);
+}

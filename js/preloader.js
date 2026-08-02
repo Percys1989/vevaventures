@@ -1,14 +1,29 @@
 (function () {
   var ecosystem = [
-    { icon: "fa-building", label: "Property Management" },
-    { icon: "fa-calculator", label: "Accounting" },
-    { icon: "fa-store", label: "Marketplace" },
-    { icon: "fa-users", label: "Investor Network" },
-    { icon: "fa-graduation-cap", label: "Education" },
-    { icon: "fa-robot", label: "AI Advisor" },
-    { icon: "fa-briefcase", label: "Business Management" },
-    { icon: "fa-layer-group", label: "Multi-Asset Management" },
+    {
+      icon: "fa-building",
+      en: "Property Management",
+      es: "Gestión de Propiedades",
+    },
+    { icon: "fa-calculator", en: "Accounting", es: "Contabilidad" },
+    { icon: "fa-store", en: "Marketplace", es: "Mercado" },
+    { icon: "fa-users", en: "Investor Network", es: "Red de Inversionistas" },
+    { icon: "fa-graduation-cap", en: "Education", es: "Educación" },
+    { icon: "fa-robot", en: "AI Advisor", es: "Asesor IA" },
+    {
+      icon: "fa-briefcase",
+      en: "Business Management",
+      es: "Gestión Empresarial",
+    },
+    {
+      icon: "fa-layer-group",
+      en: "Multi-Asset Management",
+      es: "Gestión Multi-Activo",
+    },
   ];
+
+  // Mismo idioma que ya decidió i18n.js (o "en" si es la primera visita)
+  var lang = localStorage.getItem("veva-lang") || "en";
 
   var preloader = document.getElementById("preloader");
   var iconEl = document.getElementById("plEcoIcon");
@@ -31,7 +46,7 @@
     setTimeout(function () {
       iconEl.innerHTML =
         '<i class="fa-solid ' + ecosystem[index].icon + '"></i>';
-      labelEl.textContent = ecosystem[index].label;
+      labelEl.textContent = ecosystem[index][lang];
       iconEl.classList.add("is-visible");
     }, 260); // coincide con el fade-out antes de cambiar contenido
   }

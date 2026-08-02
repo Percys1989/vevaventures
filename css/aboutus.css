@@ -2,12 +2,6 @@
   padding: 90px 0;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(
-    160deg,
-    var(--deep) 0%,
-    var(--deep2) 65%,
-    #051436 100%
-  );
 }
 .about-us::after {
   content: "";
@@ -42,7 +36,7 @@
 /* Bloque 1: foto */
 .about-photo {
   width: 260px;
-  height: 340px;
+  height: 400px;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -70,7 +64,8 @@
   display: block;
   position: relative;
   z-index: 1;
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
+  -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
 }
 /* Bloque 2: our why + descripción + firma */
 .about-content h2 {
