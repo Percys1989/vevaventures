@@ -1,115 +1,300 @@
-/* ---------- ECOSYSTEM ---------- */
-.eco-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-@media (max-width: 860px) {
-  .eco-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.eco-card {
-  border-radius: 20px;
-  padding: 32px 26px;
-  color: #fff;
-  background: linear-gradient(150deg, var(--deep), #123a94);
+/* ---------- ECOSYSTEM: circular diagram ---------- */
+#ecosystem {
+  padding: 100px 0;
   position: relative;
+  background: linear-gradient(
+    160deg,
+    var(--deep) 0%,
+    var(--deep2) 65%,
+    #051436 100%
+  );
   overflow: hidden;
-  transition: all 0.3s ease;
 }
-.eco-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  
-}
-.eco-card:hover .eco-icon-box {
-  transform: rotate(-6deg) scale(1.05);
-  transition: 0.35s;
-}
-
-.eco-card::after {
+#ecosystem::before {
   content: "";
   position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(
+      600px 400px at 10% 20%,
+      rgba(79, 163, 247, 0.15),
+      transparent 60%
+    ),
+    radial-gradient(
+      500px 500px at 90% 80%,
+      rgba(167, 139, 250, 0.12),
+      transparent 60%
+    );
+  animation: ecoDrift 10s ease-in-out infinite alternate;
+}
+.eco-hero {
+  position: relative;
+  z-index: 1;
+}
+@keyframes ecoDrift {
+  from {
+    transform: translate(-3%, -2%) scale(1);
+  }
+  to {
+    transform: translate(3%, 3%) scale(1.08);
+  }
+}
+.eco-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+.eco-intro .eyebrow {
+  color: #87ceeb;
+}
+.eco-intro h2 {
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.25;
+  margin: 14px 0 18px;
+}
+.accent-purple {
+  color: #a78bfa;
+}
+.eco-intro p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 420px;
+  margin-bottom: 26px;
+}
+
+/* ---- Diagram ---- */
+.eco-diagram {
+  position: relative;
+  width: 480px;
+  height: 480px;
+  margin: 0 auto;
+}
+.eco-orbit {
+  position: absolute;
+  inset: 40px;
+  border: 1px dashed rgba(135, 206, 235, 0.25);
+  border-radius: 50%;
+}
+.eco-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 180px;
   height: 180px;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(79, 163, 247, 0.35),
-    transparent 70%
+    rgba(79, 163, 247, 0.18),
+    rgba(5, 20, 54, 0.9) 70%
   );
-  top: -60px;
-  right: -60px;
+  border: 1px solid rgba(135, 206, 235, 0.3);
+  box-shadow: 0 0 50px rgba(79, 163, 247, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
 }
-.eco-header {
+.eco-center-logo {
+  width: 32px;
+  height: auto;
+  margin-bottom: 6px;
+}
+.eco-center-name {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.eco-center-tag {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-top: 6px;
+  line-height: 1.35;
+  transition: opacity 0.2s ease;
+}
+
+/* ---- Nodes ---- */
+.eco-node {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(5, 20, 54, 0.9);
+  border: 1px solid var(--eco-c);
+  color: var(--eco-c);
+  font-size: 20px;
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 24px;
-  position: relative;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   z-index: 2;
 }
-
-.eco-icon-box {
-  width: 62px;
-  height: 62px;
-  border-radius: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  flex-shrink: 0;
+.eco-node:hover {
+  transform: scale(1.12);
+  box-shadow: 0 0 24px var(--eco-c);
 }
-
-.eco-icon {
-  width: 30px;
-  height: 30px;
-  color: var(--mint);
-}
-
-.eco-text h3 {
-  margin: 0 0 6px;
-}
-
-.eco-text p {
-  margin: 0;
-}
-.eco-card h3 {
+.eco-node-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  white-space: nowrap;
   font-family: var(--display);
-  font-weight: 700;
-  font-size: 20px;
-  margin-bottom: 8px;
-  position: relative;
-}
-.eco-card p {
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.75);
-  margin-bottom: 16px;
-  position: relative;
-}
-.eco-card ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.eco-card li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-  font-size: 14px;
+/* Posiciones alrededor del círculo (radio 200px desde el centro de 480x480) */
+.eco-n1 {
+  top: 12px;
+  left: 212px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+} /* Property Management — arriba */
+.eco-n1:hover {
+  box-shadow: none;
+  transform: scale(1.15);
+}
+.eco-n2 {
+  top: 70.6px;
+  left: 353.4px;
+} /* Accounting */
+.eco-n3 {
+  top: 212px;
+  left: 412px;
+} /* Marketplace — derecha */
+.eco-n3 .eco-node-label,
+.eco-n2 .eco-node-label {
+  left: 20px;
+  transform: none;
+} /* etiquetas del lado derecho no se centran, se alinean a la izq. del ícono */
+.eco-n4 {
+  top: 353.4px;
+  left: 353.4px;
+} /* Investor Network */
+.eco-n5 {
+  top: 412px;
+  left: 212px;
+} /* Education — abajo */
+.eco-n6 {
+  top: 353.4px;
+  left: 70.6px;
+} /* AI Advisor */
+.eco-n7 {
+  top: 212px;
+  left: 12px;
+} /* Business Management — izquierda */
+.eco-n7 .eco-node-label,
+.eco-n6 .eco-node-label {
+  left: auto;
+  right: 20px;
+  transform: none;
+} /* etiquetas del lado izq. se alinean a la derecha del ícono */
+.eco-n8 {
+  top: 70.6px;
+  left: 70.6px;
+} /* Multi-Asset Management */
+
+.eco-node-desc {
+  display: none;
 }
 
-.eco-card li::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--mint);
-  box-shadow: 0 0 10px var(--mint);
+@media (max-width: 700px) {
+  .eco-hero {
+    grid-template-columns: 1fr;
+  }
+  .eco-intro {
+    text-align: center;
+  }
+  .eco-intro .eyebrow {
+    justify-content: center;
+  }
+  .eco-intro p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* El círculo se apaga por completo */
+  .eco-orbit,
+  .eco-center {
+    display: none;
+  }
+
+  /* El diagrama pasa a ser una grilla de tarjetas */
+  .eco-diagram {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .eco-node {
+    position: static;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .eco-node i {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+  }
+  .eco-n1 i {
+    background: transparent;
+  }
+  .eco-node-label {
+    position: static;
+    margin-top: 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  .eco-node-desc {
+    display: block;
+    font-size: 14px;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    text-align: center;
+  }
+  .eco-node:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .eco-node .eco-node-label,
+  .eco-node .eco-node-desc {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .eco-diagram {
+    transform: scale(0.72);
+    margin-top: -30px;
+    margin-bottom: -30px;
+  }
 }

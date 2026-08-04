@@ -1,6 +1,6 @@
 /* ---------- SECTIONS ---------- */
 section {
-  padding: 130px 0;
+  padding: 80px 0;
 }
 .section-head {
   max-width: 640px;
@@ -28,5 +28,45 @@ section {
 }
 .dark-zone {
   position: relative;
-  background: linear-gradient(180deg, var(--deep) 0%, var(--deep2) 45%, #051436 100%);
+  background: linear-gradient(
+    180deg,
+    var(--deep) 0%,
+    var(--deep2) 45%,
+    #051436 100%
+  );
+  overflow: hidden;
+}
+.dark-zone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(
+      650px 450px at 15% 15%,
+      rgba(79, 163, 247, 0.14),
+      transparent 60%
+    ),
+    radial-gradient(
+      550px 550px at 85% 55%,
+      rgba(167, 139, 250, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      500px 400px at 30% 90%,
+      rgba(55, 226, 160, 0.08),
+      transparent 60%
+    );
+  animation: darkZoneDrift 14s ease-in-out infinite alternate;
+}
+@keyframes darkZoneDrift {
+  0% {
+    transform: translate(-3%, -2%) scale(1);
+  }
+  50% {
+    transform: translate(2%, 3%) scale(1.06);
+  }
+  100% {
+    transform: translate(-2%, 1%) scale(1.02);
+  }
 }
