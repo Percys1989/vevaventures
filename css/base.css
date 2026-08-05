@@ -1,4 +1,5 @@
 :root {
+  --accent-purple: #a78bfa;
   --deep: #0b2a6b;
   --deep2: #071d4d;
   --blue: #1e5eff;
@@ -8,9 +9,12 @@
   --mint: #37e2a0;
   --ink: #0b1220;
   --slate: #55647e;
+  --bg-soft: #fbfcfe;
+  --bg-light: #f7faff;
+  --bg-blue: #eef5ff;
   --line: rgba(11, 42, 107, 0.1);
   --line-on-dark: rgba(255, 255, 255, 0.16);
-  --veva-sky: #87CEEB;
+  --veva-sky: #87ceeb;
   --display: "Space Grotesk", sans-serif;
   --body: "Inter", sans-serif;
 }
@@ -31,6 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
+
 img,
 svg {
   display: block;

@@ -1,10 +1,34 @@
 /* ---------- VIDEO / PRODUCT DEMO ---------- */
 .video-section {
+  position: relative;
   background: linear-gradient(180deg, #051436 0%, var(--deep2) 100%);
+  overflow: hidden;
   padding: 50px 0;
 }
+.video-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(
+      600px 400px at 80% 20%,
+      rgba(79, 163, 247, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      500px 400px at 20% 80%,
+      rgba(55, 226, 160, 0.07),
+      transparent 60%
+    );
+  animation: auroraDrift 14s ease-in-out infinite alternate;
+}
+.video-section .wrap {
+  position: relative;
+  z-index: 1;
+}
 .video-section .section-head p {
-  color: rgba(255, 255, 255, 0.65);
+  color: #ffffffa6;
 }
 .video-section .eyebrow {
   color: var(--blue-bright);

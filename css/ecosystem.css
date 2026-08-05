@@ -2,32 +2,9 @@
 #ecosystem {
   padding: 100px 0;
   position: relative;
-  background: linear-gradient(
-    160deg,
-    var(--deep) 0%,
-    var(--deep2) 65%,
-    #051436 100%
-  );
   overflow: hidden;
 }
-#ecosystem::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    radial-gradient(
-      600px 400px at 10% 20%,
-      rgba(79, 163, 247, 0.15),
-      transparent 60%
-    ),
-    radial-gradient(
-      500px 500px at 90% 80%,
-      rgba(167, 139, 250, 0.12),
-      transparent 60%
-    );
-  animation: ecoDrift 10s ease-in-out infinite alternate;
-}
+
 .eco-hero {
   position: relative;
   z-index: 1;
@@ -102,7 +79,7 @@
   padding: 12px;
 }
 .eco-center-logo {
-  width: 32px;
+  width: 40px;
   height: auto;
   margin-bottom: 6px;
 }

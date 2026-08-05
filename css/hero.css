@@ -1,21 +1,38 @@
 /* ---------- HERO ---------- */
 .hero {
   position: relative;
-  background:
-    radial-gradient(
-      1100px 620px at 78% -10%,
-      rgba(79, 163, 247, 0.55),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at -10% 100%,
-      rgba(30, 94, 255, 0.45),
-      transparent 55%
-    ),
-    linear-gradient(160deg, var(--deep) 0%, var(--deep2) 65%, #051436 100%);
+  background: linear-gradient(
+    180deg,
+    var(--deep) 0%,
+    var(--deep2) 50%,
+    #051436 100%
+  );
   color: #fff;
   overflow: hidden;
   padding: 50px 0 140px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(
+      1100px 620px at 78% -10%,
+      rgba(79, 163, 247, 0.4),
+      transparent 60%
+    ),
+    radial-gradient(
+      550px 550px at 85% 50%,
+      rgba(167, 139, 250, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      500px 400px at 10% 100%,
+      rgba(55, 226, 160, 0.08),
+      transparent 60%
+    );
+  animation: auroraDrift 14s ease-in-out infinite alternate;
 }
 .hero-grid {
   position: relative;

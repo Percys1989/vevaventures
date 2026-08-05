@@ -3,18 +3,7 @@
   position: relative;
   overflow: hidden;
 }
-.about-us::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-    800px 500px at 15% 30%,
-    rgba(79, 163, 247, 0.12),
-    transparent 60%
-  );
-  animation: aboutDrift 8s ease-in-out infinite alternate;
-}
+
 @keyframes aboutDrift {
   from {
     transform: translate(-2%, -1%);
@@ -45,15 +34,16 @@
 .about-photo::before {
   content: "";
   position: absolute;
-  inset: -30px;
+  inset: -100px;
   z-index: 0;
   background: radial-gradient(
     circle,
-    rgba(79, 163, 247, 0.45),
-    rgba(135, 206, 235, 0.15) 55%,
-    transparent 75%
+    rgba(79, 163, 247, 0.4) 0%,
+    rgba(79, 163, 247, 0.2) 30%,
+    rgba(135, 206, 235, 0.08) 55%,
+    transparent 80%
   );
-  filter: blur(20px);
+  filter: blur(45px);
   animation: aboutGlow 4s ease-in-out infinite;
 }
 .about-photo img {
@@ -141,7 +131,7 @@
   position: absolute;
   bottom: 20px;
   right: 24px;
-  width: 26px;
+  width: 50px;
   height: auto;
   opacity: 0.5;
 }
