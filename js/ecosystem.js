@@ -27,5 +27,11 @@
         node.getAttribute("data-desc-" + lang) ||
         node.getAttribute("data-desc-en");
     });
+    node.addEventListener("click", function () {
+      nodes.forEach(function (n) {
+        n.classList.remove("is-lit");
+      });
+      node.classList.add("is-lit");
+    });
   });
 })();

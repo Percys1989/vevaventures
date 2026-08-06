@@ -17,8 +17,10 @@
   margin-bottom: 14px;
 }
 .unified-intro h2 {
+  font-family: var(--display);
+  font-weight: 700;
   color: #fff;
-  font-size: 30px;
+  font-size: clamp(28px, 3.2vw, 36px);
   line-height: 1.25;
   margin-bottom: 14px;
 }

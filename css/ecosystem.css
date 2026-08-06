@@ -27,8 +27,10 @@
   color: #87ceeb;
 }
 .eco-intro h2 {
+  font-family: var(--display);
+  font-weight: 700;
   color: #fff;
-  font-size: 34px;
+  font-size: clamp(28px, 3.2vw, 36px);
   line-height: 1.25;
   margin: 14px 0 18px;
 }
@@ -91,7 +93,7 @@
   color: #fff;
 }
 .eco-center-tag {
-  font-size: 15px;
+  font-size: 10px;
   color: rgba(255, 255, 255, 0.55);
   margin-top: 6px;
   line-height: 1.35;
@@ -136,16 +138,27 @@
 
 /* Posiciones alrededor del círculo (radio 200px desde el centro de 480x480) */
 .eco-n1 {
-  top: 12px;
-  left: 212px;
   background: transparent;
   border: none;
   box-shadow: none;
-} /* Property Management — arriba */
-.eco-n1:hover {
-  box-shadow: none;
-  transform: scale(1.15);
 }
+.eco-n1 i {
+  transition:
+    filter 0.25s ease,
+    transform 0.25s ease;
+}
+.eco-n1:hover {
+  transform: scale(1.15);
+  box-shadow: none;
+}
+.eco-n1:hover i,
+.eco-n1.is-lit i {
+  filter: drop-shadow(0 0 10px var(--eco-c)) drop-shadow(0 0 4px var(--eco-c));
+}
+.eco-n1.is-lit {
+  transform: scale(1.1);
+}
+
 .eco-n2 {
   top: 70.6px;
   left: 353.4px;
@@ -241,9 +254,7 @@
     justify-content: center;
     font-size: 16px;
   }
-  .eco-n1 i {
-    background: transparent;
-  }
+ 
   .eco-node-label {
     position: static;
     margin-top: 0;
