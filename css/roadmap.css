@@ -134,3 +134,76 @@
 .rm-card:hover .rm-tag {
   background: rgba(30, 94, 255, 0.1);
 }
+
+/* ---- Head ahora es 3 columnas: dot | meta | status badge ---- */
+.rm-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.rm-meta {
+  flex: 1;
+}
+.rm-status {
+  flex-shrink: 0;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: 20px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.rm-status-live {
+  background: rgba(55, 226, 160, 0.14);
+  color: #1a9c68;
+}
+.rm-status-soon {
+  background: rgba(167, 139, 250, 0.14);
+  color: #7c5cf5;
+}
+
+/* ---- Descripción por hito ---- */
+.rm-desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--slate);
+  margin-bottom: 18px;
+}
+
+/* ---- Franja de cierre debajo del track ---- */
+.roadmap-closer {
+  text-align: center;
+  margin-top: 44px;
+}
+.roadmap-closer span {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--deep);
+  position: relative;
+  padding-bottom: 14px;
+}
+.roadmap-closer span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--mint));
+}
+
+@media (max-width: 640px) {
+  .rm-head {
+    flex-wrap: wrap;
+  }
+  .rm-status {
+    margin-left: 54px; /* alinea bajo el título, después del dot */
+  }
+}

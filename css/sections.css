@@ -1,6 +1,6 @@
 /* ---------- SECTIONS ---------- */
 section {
-  padding: 150px 0;
+  padding: var(--section-py) 0;
 }
 .section-head {
   max-width: 640px;
@@ -30,14 +30,90 @@ section {
   position: relative;
 }
 
-@keyframes darkZoneDrift {
-  0% {
-    transform: translate(-3%, -2%) scale(1);
+/* ---------- STATS STRIP: puente visual entre ecosystem y about-us ---------- */
+.stats-strip {
+  position: relative;
+  z-index: 1;
+  padding: 6px 0;
+}
+.stats-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 28px;
+  padding: 20px 40px;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(
+      90deg,
+      transparent,
+      rgba(79, 163, 247, 0.35),
+      rgba(167, 139, 250, 0.35),
+      rgba(55, 226, 160, 0.35),
+      transparent
+    )
+    1;
+  position: relative;
+}
+.stat-item {
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  position: relative;
+}
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  right: -14px;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+}
+.stat-item-icon {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  background: color-mix(in srgb, var(--si-c) 16%, transparent);
+  color: var(--si-c);
+  box-shadow: 0 0 16px color-mix(in srgb, var(--si-c) 35%, transparent);
+}
+.stat-item-n {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 32px;
+  background: linear-gradient(90deg, var(--blue-bright), #87ceeb);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+.stat-item-l {
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .stats-strip-inner {
+    padding: 24px 20px;
+    gap: 24px 16px;
   }
-  50% {
-    transform: translate(2%, 3%) scale(1.06);
+  .stat-item {
+    min-width: 42%;
   }
-  100% {
-    transform: translate(-2%, 1%) scale(1.02);
+  .stat-item-n {
+    font-size: 28px;
   }
 }

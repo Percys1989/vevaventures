@@ -9,7 +9,7 @@
   );
   color: #fff;
   overflow: hidden;
-  padding: 50px 0 140px;
+  padding: 50px 0 var(--section-py);
 }
 .hero::before {
   content: "";

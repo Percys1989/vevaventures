@@ -17,6 +17,7 @@
   --veva-sky: #87ceeb;
   --display: "Space Grotesk", sans-serif;
   --body: "Inter", sans-serif;
+  --section-py: 120px;
 }
 
 * {
@@ -65,6 +66,9 @@ button {
   padding: 0 32px;
 }
 @media (max-width: 640px) {
+  :root {
+    --section-py: 44px;
+  }
   .wrap {
     padding: 0 20px;
   }

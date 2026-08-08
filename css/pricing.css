@@ -2,7 +2,7 @@
 
 .pricing-section {
   background: #fff;
-  padding: 150px 0 100px;
+  padding: var(--section-py) 0;
 }
 
 .pricing-grid {
