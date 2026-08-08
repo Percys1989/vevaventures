@@ -1,6 +1,6 @@
 /* ---------- ECOSYSTEM: circular diagram ---------- */
 #ecosystem {
-  padding: 100px 0;
+  padding: 150px 0;
   position: relative;
   overflow: hidden;
 }
@@ -137,32 +137,11 @@
 }
 
 /* Posiciones alrededor del círculo (radio 200px desde el centro de 480x480) */
+
 .eco-n1 {
   top: 12px;
   left: 212px;
 }
-.eco-n1 i {
-  font-size: 22px;
-  color: var(--eco-c);
-  opacity: 1;
-  display: inline-block;
-  line-height: 1;
-  transition:
-    filter 0.25s ease,
-    transform 0.25s ease;
-}
-.eco-n1:hover {
-  transform: scale(1.15);
-  box-shadow: none;
-}
-.eco-n1:hover i,
-.eco-n1.is-lit i {
-  filter: drop-shadow(0 0 10px var(--eco-c)) drop-shadow(0 0 4px var(--eco-c));
-}
-.eco-n1.is-lit {
-  transform: scale(1.1);
-}
-
 .eco-n2 {
   top: 70.6px;
   left: 353.4px;
@@ -173,7 +152,8 @@
 } /* Marketplace — derecha */
 .eco-n3 .eco-node-label,
 .eco-n2 .eco-node-label {
-  left: 20px;
+  left: auto;
+  right: auto;
   transform: none;
 } /* etiquetas del lado derecho no se centran, se alinean a la izq. del ícono */
 .eco-n4 {
@@ -195,7 +175,7 @@
 .eco-n7 .eco-node-label,
 .eco-n6 .eco-node-label {
   left: auto;
-  right: 20px;
+  right: auto;
   transform: none;
 } /* etiquetas del lado izq. se alinean a la derecha del ícono */
 .eco-n8 {
