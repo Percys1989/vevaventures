@@ -1,6 +1,6 @@
 <?php
 // --- Config ---
-$to = "contact@vevaventures.com";
+$to = "Software.contact@vevaventures.com";
 $subject = "New VEVA Founders List Signup";
 
 // Only accept POST requests
@@ -53,7 +53,7 @@ $body .= "Properties/Units: $units\n";
 $body .= "Referred by: $referral\n";
 $body .= "Biggest challenge: $challenge\n";
 
-$headers = "From: VEVA Website <contact@vevaventures.com>\r\n";
+$headers = "From: VEVA Website <Software.contact@vevaventures.com>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 

@@ -1717,7 +1717,7 @@
             <div
               class="pc-price-custom"
               data-en="Custom pricing"
-              data-es="Precio personalizado"
+              data-es="Precio Especial"
             >
               Custom pricing
             </div>
@@ -1865,6 +1865,7 @@
                   >Full Name</label
                 ><input
                   id="fname"
+                  name="fname"
                   type="text"
                   placeholder="Jane Rivera"
                   required
@@ -1878,6 +1879,7 @@
                   >Email Address</label
                 ><input
                   id="femail"
+                  name="femail"
                   type="email"
                   placeholder="jane@email.com"
                   required
@@ -1893,15 +1895,17 @@
                   >Phone Number</label
                 ><input
                   id="fphone"
+                  name="fphone"
                   type="tel"
-                  placeholder="+1 (___) ___-____"
+                  maxlength="10"
+                  placeholder="305 XXX-XXXX"
                 />
               </div>
               <div class="field">
                 <label for="frole" data-en="Your Role" data-es="Tu Rol"
                   >Your Role</label
                 >
-                <select id="frole">
+                <select id="frole" name="frole" required>
                   <option
                     data-en="Property Manager"
                     data-es="Administrador de Propiedades"
@@ -1934,7 +1938,7 @@
                   data-es="Propiedades / Unidades que Administras"
                   >Properties / Units You Manage</label
                 >
-                <select id="funits">
+                <select id="funits" name="funits" required>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -1952,7 +1956,12 @@
                   data-en="Referred By (optional)"
                   data-es="Referido Por (opcional)"
                   >Referred By (optional)</label
-                ><input id="freferral" type="text" placeholder="Name or code" />
+                ><input
+                  id="freferral"
+                  name="freferral"
+                  type="text"
+                  placeholder="Name or code"
+                />
               </div>
             </div>
             <div class="field">
@@ -1963,6 +1972,7 @@
                 >Biggest challenge you expect VEVA to solve</label
               ><textarea
                 id="fchallenge"
+                name="fchallenge"
                 rows="3"
                 placeholder="Tell us what's slowing you down today"
               ></textarea>
