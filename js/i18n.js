@@ -18,6 +18,15 @@
         el.innerHTML = el.getAttribute("data-" + lang + "-html");
       });
 
+    document
+      .querySelectorAll("[data-en-href][data-es-href]")
+      .forEach(function (el) {
+        el.href =
+          lang === "es"
+            ? el.getAttribute("data-es-href")
+            : el.getAttribute("data-en-href");
+      });
+
     document.documentElement.setAttribute("lang", lang);
     label.textContent = lang === "es" ? "EN" : "ES"; // muestra el idioma AL QUE se puede cambiar
     localStorage.setItem("veva-lang", lang);
